@@ -12,7 +12,6 @@ governing permissions and limitations under the License.
 import React, {useContext, useEffect, useState} from 'react';
 import {FormContext, useRuleEngine} from '@aemforms/af-react-renderer';
 import {FieldJson, FieldModel, FieldsetModel, FormModel, State} from '@aemforms/af-core';
-import {call} from "ts-loader";
 
 const PanelSummary = function (props: State<FieldJson>) {
 
@@ -34,7 +33,7 @@ const PanelSummary = function (props: State<FieldJson>) {
 
         const findPanelV2 = (form: FormModel, ref: string): FieldsetModel => {
             // for clients running an older version of af-core that does not have access to the visit api
-            function visit(field: FieldModel | FieldsetModel, callback) {
+            function visit(field: FieldModel | FieldsetModel, callback: any) {
                 callback(field);
                 if(field?.type == 'panel') {
                     const fieldset = field as FieldsetModel;
