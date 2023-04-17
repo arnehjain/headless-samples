@@ -12,10 +12,12 @@ governing permissions and limitations under the License.
 import { mappings } from "@aemforms/af-react-components";
 import RichText from "../components/richtext";
 import Slider from "../components/slider";
+import PanelSummary from "../components/panelsummary";
 
 const customMappings: any = {
   "custom:slider": Slider,
   "custom:rich-text": RichText,
+  "dfaheadless-optum/components/adaptiveForm/panelsummary": PanelSummary,
   ...mappings
 };
 
