@@ -12,6 +12,7 @@ governing permissions and limitations under the License.
 import React, {useContext, useEffect, useState} from 'react';
 import {FormContext, useRuleEngine} from '@aemforms/af-react-renderer';
 import {FieldJson, FieldModel, FieldsetModel, FormModel, State} from '@aemforms/af-core';
+import {call} from "ts-loader";
 
 const PanelSummary = function (props: State<FieldJson>) {
 
@@ -31,6 +32,23 @@ const PanelSummary = function (props: State<FieldJson>) {
             return panel as FieldsetModel;
         }
 
+        const findPanelV2 = (form: FormModel, ref: string): FieldsetModel => {
+            // for clients running an older version of af-core that does not have access to the visit api
+            function visit(field: FieldModel | FieldsetModel, callback) {
+                callback(field);
+                if(field?.type == 'panel') {
+                    const fieldset = field as FieldsetModel;
+                    fieldset?.items?.forEach(element => visit(element, callback));
+                }
+            }
+            let panel = null;
+            form.items.forEach(element => visit(element, (elem: FieldModel | FieldsetModel) => {
+                if(elem.name == ref)
+                    panel = elem;
+            }));
+            return panel;
+        }
+
         function collectElements(current: any) {
             // collect elements that have a property `includeInSummary` set.
             const result: any[] = []
@@ -43,7 +61,8 @@ const PanelSummary = function (props: State<FieldJson>) {
             });
             return result;
         }
-        const panel = findPanel(form, panelRef);
+        // const panel = findPanel(form, panelRef);
+        const panel = findPanelV2(form, panelRef);
         const fields = collectElements(panel);
         fields.forEach(field => {
             field.subscribe(() => {
