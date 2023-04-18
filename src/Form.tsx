@@ -18,6 +18,12 @@ import {Action} from "@aemforms/af-core";
 import {Provider as Spectrum3Provider, defaultTheme} from '@adobe/react-spectrum'
 import localFormJson from '../form-definitions/form-model.json';
 
+let currentFormJson: any = {};
+
+const TY_PANEL_NAME = "ThankyouPanel";
+
+const AEM_URL_PREFIX = "http://arnjain-linux:4504"
+
 const getForm = async () => {
   if (process.env.USE_LOCAL_JSON == 'true') {
     return localFormJson;
@@ -39,24 +45,44 @@ const Form = (props: any) => {
     const fetchForm = async () => {
         const json:any = await getForm();
         if ('afModelDefinition' in json) {
+            json.afModelDefination.action = AEM_URL_PREFIX + json.afModelDefination.action;
             setForm(JSON.stringify(json.afModelDefinition))
         } else {
+            json.action = AEM_URL_PREFIX + json.action;
             setForm(JSON.stringify(json))
         }
     }
-    const onSubmit= (action: Action) => {
-      console.log('Submitting ' + action);
-      const thankyouPage =  action?.payload?.redirectUrl;
-      const thankYouMessage = action?.payload?.thankYouMessage;
-      if(thankyouPage){
-        window.location.replace(thankyouPage);
-      }else if(thankYouMessage){
-        alert(thankYouMessage);
+
+    const getThankYouPanel = (fields: any): any => {
+      let field = null;
+      Object.keys(fields).forEach((id) => {
+        const name = fields[id]?._jsonModel?.name;
+        if (name == TY_PANEL_NAME) {
+          field =  fields[id];
+        }
+      })
+      return field;
+    }
+
+    const hideAllPanels = (fields: any) => {
+      Object.keys(fields).forEach((id) => {
+        const name = fields[id]?._jsonModel?.name;
+        if(name != TY_PANEL_NAME &&  fields[id]?._jsonModel?.fieldType === 'panel'){
+          fields[id].visible = false;
+        }
+      })
+    }
+
+    const onSubmitSuccess= (action: Action) => {
+      const thankYouPanelElement = getThankYouPanel(currentFormJson._fields);
+      if (thankYouPanelElement) {
+        thankYouPanelElement.visible = true;
       }
+      hideAllPanels(currentFormJson._fields);
     };
 
     const onInitialize = (action:Action) => {
-      console.log('Initializing Form');
+      currentFormJson = action.target;
     };
 
     const onFieldChanged = (action: Action) => {
@@ -69,7 +95,7 @@ const Form = (props: any) => {
     if (form != "") {
         const element = document.querySelector(".cmp-formcontainer__content")
         const retVal = (<Spectrum3Provider theme={defaultTheme}>
-            <AdaptiveForm formJson={JSON.parse(form)} mappings={customMappings} onInitialize={onInitialize} onFieldChanged={onFieldChanged} onSubmit={onSubmit}/>
+            <AdaptiveForm formJson={JSON.parse(form)} mappings={customMappings} onInitialize={onInitialize} onFieldChanged={onFieldChanged} onSubmitSuccess={onSubmitSuccess}/>
         </Spectrum3Provider>)
         return ReactDOM.createPortal(retVal, element)
     }

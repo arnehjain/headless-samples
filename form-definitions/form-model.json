@@ -1,191 +1,234 @@
 {
-  "afModelDefinition": {
-    "id": "L2NvbnRlbnQvZm9ybXMvYWYvc3VtbWFyeS1wYW5lbC1leGFtcGxl",
-    "fieldType": "form",
-    "lang": "en",
-    "action": "/adobe/forms/af/submit/L2NvbnRlbnQvZm9ybXMvYWYvc3VtbWFyeS1wYW5lbC1leGFtcGxl",
-    "properties": {
-      "fd:dor": {
-        "dorType": "none"
-      },
-      "fd:path": "/content/forms/af/summary-panel-example/jcr:content/guideContainer",
-      "fd:schemaType": "BASIC"
+  "id": "L2NvbnRlbnQvZm9ybXMvYWYvc3VibWl0LXBhbmVsLWV4YW1wbGU=",
+  "fieldType": "form",
+  "lang": "en",
+  "action": "/adobe/forms/af/submit/L2NvbnRlbnQvZm9ybXMvYWYvc3VibWl0LXBhbmVsLWV4YW1wbGU=",
+  "properties": {
+    "fd:dor": {
+      "dorType": "none"
     },
-    "items": [
-      {
-        "id": "panelcontainer-1e357a73bb",
-        "fieldType": "panel",
-        "name": "contactdetails",
-        "visible": true,
-        "enabled": true,
-        "items": [
-          {
-            "id": "textinput-01ab1d547d",
-            "fieldType": "text-input",
-            "name": "name",
-            "visible": true,
-            "type": "string",
-            "required": false,
-            "enabled": true,
-            "readOnly": false,
-            "autoComplete": "off",
-            "label": {
-              "visible": true,
-              "richText": false,
-              "value": "Name"
-            },
-            "events": {
-              "custom:setProperty": [
-                "$event.payload"
-              ]
-            },
-            "properties": {
-              "fd:dor": {
-                "dorExclusion": false
-              },
-              "fd:path": "/content/forms/af/summary-panel-example/jcr:content/guideContainer/panelcontainer/textinput"
-            },
-            ":type": "dfaheadless-optum/components/adaptiveForm/textinput",
-            "dataLayer": {
-              "textinput-01ab1d547d": {
-                "@type": "dfaheadless-optum/components/adaptiveForm/textinput",
-                "repo:modifyDate": "2023-04-17T12:42:18Z"
-              }
-            }
-          },
-          {
-            "id": "numberinput-442854ab70",
-            "fieldType": "number-input",
-            "name": "age",
-            "visible": true,
-            "type": "number",
-            "required": false,
-            "enabled": true,
-            "readOnly": false,
-            "label": {
-              "visible": true,
-              "richText": false,
-              "value": "Age"
-            },
-            "events": {
-              "custom:setProperty": [
-                "$event.payload"
-              ]
-            },
-            "properties": {
-              "fd:dor": {
-                "dorExclusion": false
-              },
-              "fd:path": "/content/forms/af/summary-panel-example/jcr:content/guideContainer/panelcontainer/numberinput"
-            },
-            ":type": "dfaheadless-optum/components/adaptiveForm/numberinput",
-            "dataLayer": {
-              "numberinput-442854ab70": {
-                "@type": "dfaheadless-optum/components/adaptiveForm/numberinput",
-                "repo:modifyDate": "2023-04-17T12:42:29Z"
-              }
-            }
-          },
-          {
-            "id": "textinput-ad33470b07",
-            "fieldType": "multiline-input",
-            "name": "address",
-            "visible": true,
-            "type": "string",
-            "required": false,
-            "enabled": true,
-            "readOnly": false,
-            "autoComplete": "off",
-            "label": {
-              "visible": true,
-              "richText": false,
-              "value": "Address"
-            },
-            "events": {
-              "custom:setProperty": [
-                "$event.payload"
-              ]
-            },
-            "properties": {
-              "fd:dor": {
-                "dorExclusion": false
-              },
-              "fd:path": "/content/forms/af/summary-panel-example/jcr:content/guideContainer/panelcontainer/textinput_613752012"
-            },
-            ":type": "dfaheadless-optum/components/adaptiveForm/textinput",
-            "dataLayer": {
-              "textinput-ad33470b07": {
-                "@type": "dfaheadless-optum/components/adaptiveForm/textinput",
-                "repo:modifyDate": "2023-04-17T12:42:08Z"
-              }
-            }
-          }
-        ],
-        "label": {
+    "fd:path": "/content/forms/af/submit-panel-example/jcr:content/guideContainer",
+    "fd:schemaType": "BASIC"
+  },
+  "items": [
+    {
+      "id": "wizard-623edb2e52",
+      "fieldType": "panel",
+      "name": "wizard",
+      "visible": true,
+      "enabled": true,
+      "items": [
+        {
+          "id": "panelcontainer-64896a9fed",
+          "fieldType": "panel",
+          "name": "firstPanel",
           "visible": true,
-          "richText": false,
-          "value": "Contact Details"
-        },
-        "events": {
-          "custom:setProperty": [
-            "$event.payload"
-          ]
-        },
-        "properties": {
-          "fd:dor": {
-            "dorExclusion": false,
-            "dorExcludeTitle": false,
-            "dorExcludeDescription": false
+          "enabled": true,
+          "items": [
+            {
+              "id": "textinput-0d06c11b33",
+              "fieldType": "text-input",
+              "name": "name",
+              "visible": true,
+              "type": "string",
+              "required": false,
+              "enabled": true,
+              "readOnly": false,
+              "autoComplete": "off",
+              "label": {
+                "visible": true,
+                "richText": false,
+                "value": "Name"
+              },
+              "events": {
+                "custom:setProperty": [
+                  "$event.payload"
+                ]
+              },
+              "properties": {
+                "fd:dor": {
+                  "dorExclusion": false
+                },
+                "fd:path": "/content/forms/af/submit-panel-example/jcr:content/guideContainer/wizard/panelcontainer/textinput"
+              },
+              ":type": "dfaheadless-optum/components/adaptiveForm/textinput",
+              "dataLayer": {
+                "textinput-0d06c11b33": {
+                  "@type": "dfaheadless-optum/components/adaptiveForm/textinput",
+                  "repo:modifyDate": "2023-04-18T10:11:03Z"
+                }
+              }
+            },
+            {
+              "id": "submit-e296e87e77",
+              "fieldType": "button",
+              "name": "submit1681812667478",
+              "visible": true,
+              "type": "string",
+              "required": false,
+              "enabled": true,
+              "buttonType": "submit",
+              "properties": {
+                "fd:dor": {
+                  "dorExclusion": true
+                },
+                "fd:path": "/content/forms/af/submit-panel-example/jcr:content/guideContainer/wizard/panelcontainer/submit",
+                "fd:buttonType": "submit"
+              },
+              "label": {
+                "visible": true,
+                "richText": false,
+                "value": "Submit"
+              },
+              "events": {
+                "click": [
+                  "submitForm('custom:submitSuccess', 'custom:submitError')"
+                ],
+                "custom:setProperty": [
+                  "$event.payload"
+                ]
+              },
+              ":type": "dfaheadless-optum/components/adaptiveForm/actions/submit",
+              "dataLayer": {
+                "submit-e296e87e77": {
+                  "@type": "dfaheadless-optum/components/adaptiveForm/actions/submit",
+                  "repo:modifyDate": "2023-04-18T10:11:07Z"
+                }
+              }
+            }
+          ],
+          "label": {
+            "visible": true,
+            "richText": false,
+            "value": "Contact Details"
           },
-          "fd:path": "/content/forms/af/summary-panel-example/jcr:content/guideContainer/panelcontainer"
-        },
-        ":type": "dfaheadless-optum/components/adaptiveForm/panelcontainer",
-        "dataLayer": {
-          "panelcontainer-1e357a73bb": {
-            "@type": "dfaheadless-optum/components/adaptiveForm/panelcontainer",
-            "repo:modifyDate": "2023-04-17T12:41:33Z"
+          "events": {
+            "custom:setProperty": [
+              "$event.payload"
+            ]
+          },
+          "properties": {
+            "fd:dor": {
+              "dorExclusion": false,
+              "dorExcludeTitle": false,
+              "dorExcludeDescription": false
+            },
+            "fd:path": "/content/forms/af/submit-panel-example/jcr:content/guideContainer/wizard/panelcontainer"
+          },
+          ":type": "dfaheadless-optum/components/adaptiveForm/panelcontainer",
+          "dataLayer": {
+            "panelcontainer-64896a9fed": {
+              "@type": "dfaheadless-optum/components/adaptiveForm/panelcontainer",
+              "repo:modifyDate": "2023-04-18T10:10:48Z"
+            }
           }
         }
+      ],
+      "label": {
+        "visible": false,
+        "richText": false,
+        "value": "Wizard"
       },
-      {
-        "id": "panelsummary-30a412fef0",
-        "fieldType": "plain-text",
-        "name": "contactdetails_summary",
-        "visible": true,
-        "panelRef": "contactdetails",
-        "properties": {
-          "fd:path": "/content/forms/af/summary-panel-example/jcr:content/guideContainer/panelsummary",
-          "custom:panelRef": "contactdetails"
-        },
-        "events": {
-          "custom:setProperty": [
-            "$event.payload"
-          ]
-        },
-        ":type": "dfaheadless-optum/components/adaptiveForm/panelsummary",
-        "dataLayer": {
-          "panelsummary-30a412fef0": {
-            "@type": "dfaheadless-optum/components/adaptiveForm/panelsummary",
-            "repo:modifyDate": "2023-04-17T12:43:16Z"
-          }
+      "events": {
+        "custom:setProperty": [
+          "$event.payload"
+        ]
+      },
+      "properties": {
+        "fd:path": "/content/forms/af/submit-panel-example/jcr:content/guideContainer/wizard"
+      },
+      ":type": "dfaheadless-optum/components/adaptiveForm/wizard",
+      "dataLayer": {
+        "wizard-623edb2e52": {
+          "@type": "dfaheadless-optum/components/adaptiveForm/wizard",
+          "repo:modifyDate": "2023-04-18T10:11:26Z"
         }
       }
-    ],
-    "events": {
-      "custom:setProperty": [
-        "$event.payload"
-      ]
     },
-    "dataLayer": {
-      "L2NvbnRlbnQvZm9ybXMvYWYvc3VtbWFyeS1wYW5lbC1leGFtcGxl": {
-        "@type": "dfaheadless-optum/components/adaptiveForm/formcontainer"
+    {
+      "id": "panelcontainer-a266a122e1",
+      "fieldType": "panel",
+      "name": "ThankyouPanel",
+      "visible": false,
+      "enabled": true,
+      "items": [
+        {
+          "id": "button-4e62ca5a2c",
+          "fieldType": "button",
+          "name": "downloadDor",
+          "visible": true,
+          "type": "string",
+          "required": false,
+          "enabled": true,
+          "buttonType": "button",
+          "properties": {
+            "fd:dor": {
+              "dorExclusion": false
+            },
+            "fd:path": "/content/forms/af/submit-panel-example/jcr:content/guideContainer/panelcontainer_19182/button",
+            "fd:buttonType": "button"
+          },
+          "label": {
+            "visible": true,
+            "richText": false,
+            "value": "Download Document of Record"
+          },
+          "events": {
+            "custom:setProperty": [
+              "$event.payload"
+            ]
+          },
+          ":type": "dfaheadless-optum/components/adaptiveForm/button",
+          "dataLayer": {
+            "button-4e62ca5a2c": {
+              "@type": "dfaheadless-optum/components/adaptiveForm/button",
+              "repo:modifyDate": "2023-04-18T10:12:18Z"
+            }
+          }
+        }
+      ],
+      "label": {
+        "visible": true,
+        "richText": false,
+        "value": "Thank you for submitting the form"
+      },
+      "events": {
+        "custom:setProperty": [
+          "$event.payload"
+        ]
+      },
+      "properties": {
+        "fd:dor": {
+          "dorExclusion": false,
+          "dorExcludeTitle": false,
+          "dorExcludeDescription": false
+        },
+        "fd:path": "/content/forms/af/submit-panel-example/jcr:content/guideContainer/panelcontainer_19182"
+      },
+      ":type": "dfaheadless-optum/components/adaptiveForm/panelcontainer",
+      "dataLayer": {
+        "panelcontainer-a266a122e1": {
+          "@type": "dfaheadless-optum/components/adaptiveForm/panelcontainer",
+          "repo:modifyDate": "2023-04-18T10:12:26Z"
+        }
       }
-    },
-    "adaptiveform": "0.11.0-Pre",
-    "metadata": {
-      "grammar": "json-formula-1.0.0",
-      "version": "1.0.0"
-    },
-    ":type": "dfaheadless-optum/components/adaptiveForm/formcontainer"
-  }
+    }
+  ],
+  "events": {
+    "custom:setProperty": [
+      "$event.payload"
+    ]
+  },
+  "dataLayer": {
+    "L2NvbnRlbnQvZm9ybXMvYWYvc3VibWl0LXBhbmVsLWV4YW1wbGU=": {
+      "@type": "dfaheadless-optum/components/adaptiveForm/formcontainer",
+      "repo:modifyDate": "2023-04-18T12:35:42Z"
+    }
+  },
+  "adaptiveform": "0.11.0-Pre",
+  "metadata": {
+    "grammar": "json-formula-1.0.0",
+    "version": "1.0.0"
+  },
+  ":type": "dfaheadless-optum/components/adaptiveForm/formcontainer"
 }
