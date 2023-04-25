@@ -22,7 +22,7 @@ const FormData = function (props: State<FieldJson>) {
     const [attachmentNames, setAttachmentNames] = useState([]);
     const updateData = () => {
         setData(JSON.stringify(form.exportData()))
-        setAttachmentNames(attachmentField.value?.map((item: any) => item?.name))
+        setAttachmentNames(attachmentField.value?.map((item: any) => item?.name) || [])
     }
 
     return(

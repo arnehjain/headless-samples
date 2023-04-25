@@ -13,11 +13,13 @@ import { mappings } from "@aemforms/af-react-components";
 import RichText from "../components/richtext";
 import Slider from "../components/slider";
 import FormData from "../components/formdata";
+import CustomFileUpload from "../components/customfileupload";
 
 const customMappings: any = {
   "custom:slider": Slider,
   "custom:rich-text": RichText,
   "custom:form-data": FormData,
+  "dfaheadless-optum/components/adaptiveForm/customfileinput/v1/customfileinput": CustomFileUpload,
   ...mappings
 };
 
