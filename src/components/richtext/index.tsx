@@ -15,7 +15,8 @@ import {FieldJson, State} from '@aemforms/af-core';
 import { richTextString } from '@aemforms/af-react-components';
 
 const RichText = function (props: State<FieldJson>) {
-    
+
+    // @ts-ignore
     const [state, handlers] = useRuleEngine(props);
 
     return(

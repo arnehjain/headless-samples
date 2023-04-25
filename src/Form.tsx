@@ -13,7 +13,7 @@ import React, {useEffect, useState} from "react";
 import {AdaptiveForm} from "@aemforms/af-react-renderer";
 import customMappings from './utils/mappings';
 import ReactDOM from "react-dom";
-import {Action} from "@aemforms/af-core";
+import {Action, Field, FieldChanged} from "@aemforms/af-core";
 //@ts-ignore
 import {Provider as Spectrum3Provider, defaultTheme} from '@adobe/react-spectrum'
 import localFormJson from '../form-definitions/form-model.json';
@@ -44,7 +44,7 @@ const Form = (props: any) => {
             setForm(JSON.stringify(json))
         }
     }
-    const onSubmit= (action: Action) => {
+    const onSubmit= (action: any) => {
       console.log('Submitting ' + action);
       const thankyouPage =  action?.payload?.redirectUrl;
       const thankYouMessage = action?.payload?.thankYouMessage;
@@ -55,11 +55,11 @@ const Form = (props: any) => {
       }
     };
 
-    const onInitialize = (action:Action) => {
+    const onInitialize = (action: any) => {
       console.log('Initializing Form');
     };
 
-    const onFieldChanged = (action: Action) => {
+    const onFieldChanged = (action: any) => {
       console.log('On Field Changed (Executes everytime a form field is updated)')
     };
 

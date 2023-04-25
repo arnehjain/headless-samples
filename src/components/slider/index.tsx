@@ -16,7 +16,8 @@ import React, { useCallback } from 'react';
 import {useRuleEngine} from '@aemforms/af-react-renderer';
 
 const SliderComponent = function (props: State<FieldJson>) {
-    
+
+  // @ts-ignore
   const [state, handlers] = useRuleEngine(props);
   
   const res = {
