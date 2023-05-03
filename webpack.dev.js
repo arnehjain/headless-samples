@@ -42,25 +42,7 @@ module.exports =
             open: true,
             hot: true,
             compress: true,
-            port: 3000,
-            proxy: {
-                '/api': {
-                    target: process.env.FORM_API,
-                    pathRewrite: { '^/api': '' },
-                },
-                '/adobe': {
-                    target: process.env.AEM_URL,
-                    secure: false,
-                    changeOrigin: true,
-                    onProxyReq: aemProxyReq
-                },
-                '/content': {
-                    target: process.env.AEM_URL,
-                    secure: false,
-                    changeOrigin: true,
-                    onProxyReq: aemProxyReq
-                }
-            }
+            port: 3000
         },
         plugins: [
             new BundleAnalyzerPlugin({

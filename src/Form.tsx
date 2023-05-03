@@ -55,8 +55,19 @@ const Form = (props: any) => {
       }
     };
 
-    const onInitialize = (action:Action) => {
+    const onInitialize = async (action:Action) => {
       console.log('Initializing Form');
+      // with cors
+      const response = await fetch("http://localhost:4504/adobe/forms/af/listforms", {
+          method: "POST",
+          mode: "cors",
+          credentials: "include",
+          headers: {
+              "Content-Type": "application/json"
+          },
+          body: "{}"
+      });
+      console.log(response)
     };
 
     const onFieldChanged = (action: Action) => {
