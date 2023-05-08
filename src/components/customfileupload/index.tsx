@@ -20,8 +20,15 @@ const CustomFileUpload = function (props: State<FieldJson>) {
     const [state, handlers] = useRuleEngine(props);
 
     const onChange = (event: any) => {
-        const files: FileList = event.target.files;
-        handlers.dispatchChange(Array.from(files));
+        const files = Array.from(event.target.files);
+        // upload the files to remote url
+
+        const processedFiles = files.map((file: File, index) => {
+            const processed = new File([`https://remotefileurl.blobstore/file/${index}`], file.name)
+            return processed
+        })
+        // the remote url is the file content in the multi-part response at the AEM
+        handlers.dispatchChange(processedFiles);
     }
 
     if(!state.visible)

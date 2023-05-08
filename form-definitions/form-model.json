@@ -1,21 +1,20 @@
 {
-  "id": "L2NvbnRlbnQvZm9ybXMvYWYvbm9uZS1hdHRhY2htZW50",
+  "id": "L2NvbnRlbnQvZm9ybXMvYWYvZXhhbXBsZXMvc3VibWl0LXdpdGgtZGF0YS11cmk=",
   "fieldType": "form",
   "lang": "en",
-  "action": "/adobe/forms/af/submit/L2NvbnRlbnQvZm9ybXMvYWYvbm9uZS1hdHRhY2htZW50",
+  "action": "http://arnjain-linux:4504/adobe/forms/af/submit/L2NvbnRlbnQvZm9ybXMvYWYvZXhhbXBsZXMvc3VibWl0LXdpdGgtZGF0YS11cmk=",
   "properties": {
     "fd:dor": {
       "dorType": "none"
     },
-    "fd:path": "/content/forms/af/none-attachment/jcr:content/guideContainer",
+    "fd:path": "/content/forms/af/examples/submit-with-data-uri/jcr:content/guideContainer",
     "fd:schemaType": "BASIC"
   },
   "items": [
     {
-      "id": "customfileinput-8dd1dc9fb0",
+      "id": "customfileinput-3a6c2b221a",
       "fieldType": "file-input",
-      "name": "customfileinput1682394290386",
-      "dataRef": null,
+      "name": "customfileinput1683556475579",
       "visible": true,
       "type": "file[]",
       "required": false,
@@ -42,20 +41,20 @@
         "fd:dor": {
           "dorExclusion": false
         },
-        "fd:path": "/content/forms/af/none-attachment/jcr:content/guideContainer/customfileinput"
+        "fd:path": "/content/forms/af/examples/submit-with-data-uri/jcr:content/guideContainer/customfileinput"
       },
       ":type": "dfaheadless-optum/components/adaptiveForm/customfileinput/v1/customfileinput",
       "dataLayer": {
-        "customfileinput-8dd1dc9fb0": {
+        "customfileinput-3a6c2b221a": {
           "@type": "dfaheadless-optum/components/adaptiveForm/customfileinput/v1/customfileinput",
-          "repo:modifyDate": "2023-04-25T03:53:26Z"
+          "repo:modifyDate": "2023-05-08T14:34:48Z"
         }
       }
     },
     {
-      "id": "submit-7439a8d00d",
+      "id": "submit-9ec1842b1b",
       "fieldType": "button",
-      "name": "submit1682163728807",
+      "name": "submit1683556480625",
       "visible": true,
       "type": "string",
       "required": false,
@@ -65,7 +64,7 @@
         "fd:dor": {
           "dorExclusion": true
         },
-        "fd:path": "/content/forms/af/none-attachment/jcr:content/guideContainer/submit",
+        "fd:path": "/content/forms/af/examples/submit-with-data-uri/jcr:content/guideContainer/submit",
         "fd:buttonType": "submit"
       },
       "label": {
@@ -83,16 +82,11 @@
       },
       ":type": "dfaheadless-optum/components/adaptiveForm/actions/submit",
       "dataLayer": {
-        "submit-7439a8d00d": {
+        "submit-9ec1842b1b": {
           "@type": "dfaheadless-optum/components/adaptiveForm/actions/submit",
-          "repo:modifyDate": "2023-04-22T11:42:07Z"
+          "repo:modifyDate": "2023-05-08T14:34:40Z"
         }
       }
-    },
-    {
-      "name": "form-data",
-      "field-type": "plain-text",
-      ":type": "custom:form-data"
     }
   ],
   "events": {
@@ -101,14 +95,14 @@
     ]
   },
   "dataLayer": {
-    "L2NvbnRlbnQvZm9ybXMvYWYvbm9uZS1hdHRhY2htZW50": {
+    "L2NvbnRlbnQvZm9ybXMvYWYvZXhhbXBsZXMvc3VibWl0LXdpdGgtZGF0YS11cmk=": {
       "@type": "dfaheadless-optum/components/adaptiveForm/formcontainer"
     }
   },
   "adaptiveform": "0.11.0-Pre",
   "metadata": {
-    "version": "1.0.0",
-    "grammar": "json-formula-1.0.0"
+    "grammar": "json-formula-1.0.0",
+    "version": "1.0.0"
   },
   ":type": "dfaheadless-optum/components/adaptiveForm/formcontainer"
 }
