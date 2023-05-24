@@ -17,12 +17,9 @@ import {Button} from "@adobe/react-spectrum";
 const FormData = function (props: State<FieldJson>) {
 
     const {form} = useContext(FormContext);
-    const attachmentField = form.items[0];
     const [data, setData] = useState('')
-    const [attachmentNames, setAttachmentNames] = useState([]);
     const updateData = () => {
         setData(JSON.stringify(form.exportData()))
-        setAttachmentNames(attachmentField.value?.map((item: any) => item?.name))
     }
 
     return(
@@ -36,10 +33,6 @@ const FormData = function (props: State<FieldJson>) {
                    </code>
                 </pre>
                 <br/>
-                Attachment Names:
-                <div>
-                    {attachmentNames.map((item, id) => <li key={id}>{item}</li>)}
-                </div>
             </div>
         </div>
     )

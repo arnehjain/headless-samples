@@ -13,11 +13,13 @@ import { mappings } from "@aemforms/af-react-components";
 import RichText from "../components/richtext";
 import Slider from "../components/slider";
 import FormData from "../components/formdata";
+import DateField from "../components/datefield";
 
 const customMappings: any = {
   "custom:slider": Slider,
   "custom:rich-text": RichText,
   "custom:form-data": FormData,
+  "custom:date-input": DateField,
   ...mappings
 };
 
